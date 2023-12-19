@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="node_modules/todomvc-app-css/index.css" />
   </head>
   <body>
+    <!-- 동작 참고: https://todomvc.com/examples/vanillajs/ -->
     <section class="todoapp">
       <header class="header">
         <h1>todos</h1>
@@ -19,10 +20,33 @@
       <section class="main">
         <input id="toggle-all" class="toggle-all" type="checkbox" />
         <label for="toggle-all">Mark all as complete</label>
-        <ul class="todo-list"></ul>
+        <ul class="todo-list">
+          <li>
+            <div class="view">
+              <input class="toggle" type="checkbox" />
+              <label>title</label>
+              <button class="destroy"></button>
+            </div>
+          </li>
+          <li class="completed">
+            <div class="view">
+              <input class="toggle" type="checkbox" />
+              <label>title</label>
+              <button class="destroy"></button>
+            </div>
+          </li>
+        </ul>
       </section>
       <footer class="footer">
-        <span class="todo-count"></span>
+        <span class="todo-count">
+          <!-- 
+            completed가 안된 todo item 개수에 따라 텍스트 출력
+
+            - 0개일 경우: "0 items left" 출력
+            - 1개일 경우: "1 item left" 출력
+            - 여러개일 경우: "3 items left" 출력
+           -->
+        </span>
         <ul class="filters">
           <li>
             <a href="#/" class="selected">All</a>
